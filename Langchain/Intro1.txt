@@ -1,0 +1,77 @@
+Gen AI is a type of AI that can generate new content like text images music code etc 
+by learning pattern from the existing data mimiking human creativity.
+---> It can create new content.
+
+
+Machine Learning--> learn from data and make decisions 
+----> numerical output
+----> classification output
+----> ranking based output/ recommendation system.
+
+AI---> ML---> DL----> Gen AI
+
+Just a thought 
+In today's world we have internet and crypto
+
+And genAI is rolling in between, for a great success it should lie towards the internet.
+---> Computer Networks.
+
+Central Thing which sit in between GEN AI field:
+
+Foundational model --> large model which could perform generalised tasks like LLMs, LMMs etc.
+
+Foundational model --> User perspective 
+                   --> Builder perspective
+
+Prompt engineering, RLHF, RAG, Pretraining, Quantization, AI Agents, Vector Databases, Fine tuning.
+
+The Builder's Perspective And curriculum:
+
+Transformer Architecture.
+Types of transformer.
+
+Pretraining:
+
+Training objectives
+Tokenization strategies****
+Training strategies
+Handling challenges
+
+Optimization:
+
+Training optimization
+Model compresssion
+Optimizing Inference
+
+Fine Tuning:
+Task specific tuning RLHF
+Instruction tuning. PEFT
+Continual pretraining
+
+Evaluation
+Deployment
+
+
+The user's Perspective And curriculum:
+
+Building basic LLM Apps
+Open source vs closed
+Source LLMs
+Using LLM APIs
+LangChain---> LLM based application.
+HuggingFace
+Ollama
+
+Prompt Engineering---> to improve response structure.
+RAG---> see external data and then qna.
+Fine Tuning
+
+Agents--> LLM + tools (not only LLM but can perform a task).
+LLMOps
+
+Builder side.     AI Engineer       User side software developer
+
+
+
+ 
+

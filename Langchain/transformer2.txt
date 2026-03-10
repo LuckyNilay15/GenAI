@@ -1,0 +1,4 @@
+Types of Transformer:
+Encoder only(BERT)
+Decoder only(GPT)
+Encoder & Decoder Based (T5)
