@@ -1,0 +1,50 @@
+It is an open source framework powered by large language models.
+
+Let us see a flow:
+
+User  --------> Semantic Search(on a pdf stored in a database)----> Result----> System Query.
+Query  
+
+System Query(Filtered pages+ User query)----> Brain(capable of context aware text generation + NLU)----> Output.
+
+About Semantic Search:
+
+User query.  &   N paragraphs----> N dimensional vector----> Semantic Search--> result
+
+We will calculate the similarity of each vector with the user vector to find similarity and then decide.
+Tech: Word2Vec, Doc2Vec, BERT, etc.
+
+Embedding---> numerical representation of text (0,1,2,...).---> vector
+
+
+Challenge#1: Brain---> LLM
+Challenge#2: Computation.===> LLM ---> LLM APIs.
+
+Challenge#3: Orchestrating.
+There are a lot of moving components and in between them we have to perform a lot of tasks through a pipeline.
+If let suppose we need to change out LLM api let say from OpenAI to Anthropic, we need to change the code in multiple places.
+Or if we nned to change the moving component like from AWS S3 to let say GCP, then also we need to change.
+So to avoid this, we need a framework which can help us in building LLM applications.
+Langchain is such a framework.
+It gives us plug and play feature with the help of which we can easily integrate different components.
+
+Benefits of Langchain:
+
+1. Concept of chains.
+The output of one component is the input of another component automatically, no need to write code for it manually.
+Chains--> sequential, parallel, conditional.--> so it can handle any complex system.
+
+
+2. Model agnostic development.
+3. Complete ecosystem.
+4. Memory and state ecosystem.
+
+
+
+
+
+
+
+
+
+

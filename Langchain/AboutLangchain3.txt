@@ -1,0 +1,18 @@
+Building LLM applications using Langchain.
+
+Langchain provides a framework to build LLM applications which has modular components and end-to-end tools that helps in building 
+complex AI applications such as chatbot, question-answering system, code generation, data analysis, image generation, rag,autonomous agents, etc.
+
+Features of Langchain:
+1. Support all major LLMs.
+2. Simplifies building LLM applications.
+3. Integrates with other tools and services.
+4. Open source, free, actively developed.
+5. Support all major GenAI use cases.
+
+Curriculum:
+
+1. Fundamentals
+2. RAG
+3. Agents
+
