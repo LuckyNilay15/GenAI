@@ -1,0 +1,157 @@
+Components will reveal how langchain as a framework is organised.
+The thought process behind it.
+
+1. Models
+2. Prompts
+3. Chains
+4. Memory
+5. Indexes
+6. Agents
+
+--------------------------------------------------------------------------------------
+1. Models:
+
+These are the core interfaces with the help of which we interact with AI models.
+
+with NLP lets see the journey to understand it better:
+
+NLP---> chatbot---> NLU--------------------------> LLMs--> internet use---> Billlions size(>100GB)-----> LLM APIs<---- query(req)-----> #challenge3(implementation) ------->This prob off code migration solved using Langchain.--> using langchain model interface.                                                  
+             (natural lang understanding)                                    #Challenge2                        ------>user(res)         for diff apis diff code.
+             ----> reply                                                   solved using LLM APIs
+             (context aware text generation)
+                #Challenge1
+                solved using LLM
+
+Langchain model interface provides a way through which we can interact with any LLM APIs without much change in code.
+
+Langchain can interact with 2 types of models:
+1. LLMs---> text input ,text output(chatbot, agents etc)
+2. Embeddings----> text input, vector output(semantic search etc).
+
+Now, lets see which models for both use cases langchain has:
+
+Available at langchain official doc.
+
+Providers:
+1. Huggingface
+2. OpenAI
+3. Anthropic
+4. Cohere
+5. Google---> Gemini
+6. AWS--> Bedrock
+
+Embeddings:
+1. AzureOpenAI
+2. Ollama
+3. OpenAI 
+4. Cohere
+5. Google
+
+etc etc.
+--------------------------------------------------------------------------------
+2. Prompts
+Input to LLM.
+The output of prompt depends upon the tone of the input .i.e the prompt, so it is very important 
+to write a good prompt. And Langchain provides a component itself for the prompts.
+
+Langchain provides 2 types of prompts:
+1. PromptTemplate
+---> Dynamic and reusable prompt.
+
+2. ChatPromptTemplate
+---> Role Based prompt.
+
+3. FewShotPromptTemplate
+examples---> imput , output
+example_template
+Ticket---> input
+Category---> output
+few_shot_prompt===> input_variables + example_template+ prefix + suffix + input_variables
+
+-------------------------------------------------------------------------------------
+
+3. Chains:
+
+Used to build pipeline in langchain.
+For example we need to build a LLM application which takes english text let say of 1000 words and convert it to hindi summary of let say 100 words.
+
+Now Flow:
+
+Query----> LLM----> translate(hindi)----> LLM----> summarize(100 words)---->output
+Now we need to build this pipeline.
+Without langchain we need to write code for each component and then integrate them.
+With langchain we can build this pipeline in few lines of code.
+And langchain provides a way through which these components can be integrated automatically.
+i.e it will take the output of one component as input of another component automatically.
+
+Can form complex pipelines using these components as well.
+
+Complex Pipeline:
+1. Parallel pipeline
+
+Input.  ----> LLM1 ---->
+                        report--------> LLM ---> combine report.
+       ------>LLM2----> 
+
+2.Conditional pipeline
+
+input----> feedback----> good----> thankyou
+                   ----> bad----> email(customer support service).
+
+---------------------------------------------------------------------------------------------------
+
+4. Indexes:
+
+---> Document loader
+---> Text splitter---> data chunking.
+---> Vector Store---> so that semantic search can be performed.
+---> Retriever---> user query--> embedding---> semantic search---> relevant documents.
+
+(Relevant documents + user query)----> LLM----> output.
+
+For example we are asking our personal question or releated to company documents.
+But normal LLM is trained on internet and it doesn't have any idea about company documents.
+So here if we combine LLM with indexes then it can provide better results.
+
+i.e LLM + external knowledge.
+
+-----------------------------------------------------------------
+
+5. Memory:
+
+LLM Api calls are stateless.
+---> i.e. each request to LLM api is independent of previous requests.
+
+It means if we want to remember previous conversation to provide context to the LLM for current conversation etc we have to provide the memory to the LLM.
+
+ConversationBufferMemory
+ConversationBufferWindowMemory
+Summarizer-Based Memory
+Custom Memory
+
+next req---> (query + memory(previous conversation history))----> LLM----> output.
+
+---------------------------------------------------------------------------------------------------
+
+6. Agents:
+
+LLM--> NLU + context aware text generation.
+
+AI agent----> LLM + external tools.
+------> reasoning capabilities.
+------> tools.
+Reasoning---> Chain of thought prompting.
+
+Let say we have a chatbot and it has access to some tools like calculator, weather apis.
+Now user query give me the today weather's temperature of delhi multiplied by 3.
+
+Breakdown, the query and then try to reason.
+
+
+
+
+
+
+
+
+

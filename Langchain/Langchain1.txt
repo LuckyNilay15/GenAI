@@ -30,14 +30,39 @@ It gives us plug and play feature with the help of which we can easily integrate
 
 Benefits of Langchain:
 
-1. Concept of chains.
+1. Concept of chains.(Most important).
 The output of one component is the input of another component automatically, no need to write code for it manually.
 Chains--> sequential, parallel, conditional.--> so it can handle any complex system.
 
 
 2. Model agnostic development.
+
+Use whatever moving component ot tools like from AWS S3 to GCP etc we have to change just one line of code. that it and refer point 1 it itegrate automatically.(Doubt how??--> interesting concept maybe).
+Just have to focus on core/business logic and that's it.
+
 3. Complete ecosystem.
-4. Memory and state ecosystem.
+
+Available for all tools and components--> langchain provides plugins for all tools and components.
+
+4. Memory and state handling.
+
+Remembering previous conversation to provide context to the LLM for current conversation etc.
+
+What can you build?
+
+1. Conversational chatbots
+2. AI knowlwdge assistants--> access to part db
+3. AI agents---> conversation + action.
+4. Workflow automation
+5. Summarization/ Research Helpers.---> own chatbot.
+
+Alternatives:
+
+1. LlamaIndex
+2. Haystack
+
+
+
 
 
 
