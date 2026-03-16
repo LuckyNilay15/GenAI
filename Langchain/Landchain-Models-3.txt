@@ -1,0 +1,84 @@
+Langchain models:
+
+It is designed to facilitate interaction with various language and embedding models.
+It provides a common interface for different models.
+
+Models---->Language Models----> Text input, text output---> chatbots, agents etc
+     ----->Embedding Models----> Text input, vector output(embeddings)(representation of text in numerical form/contextual representation)---> semantic search----->RAG Models.
+
+Plan of Action:
+
+Language Models--->closed source---> openAI, claude, gemini
+                 --->open source---> huggingface, ollama, etc.
+
+Embedding Models--->closed source---> openAI
+                  --->open source---> huggingface etc.
+
+Similarity calculation--->between 2 docs -> calculate score.
+
+Language Models:
+
+Language models---> LLMs-----> string(input)---> LLM----> string(output)---> old---> generalised tasks.--->text generation, summarization, code generation, QnA , etc.
+               ---> chat Models---> specialised for conversation---> input(sequence of messages)---> output(sequence of messages).
+
+LLM:
+1.OpenAI LLM access using API key.
+
+param--> 1.model, 2.temperature, 3. max_completion_tokens.
+Temperature---> It controls the randomness of the output.
+It affects how creative or deterministic the output is.
+range---[0,2]
+
+Factual ans----> 0.0-0.3
+Balanced ans(general Qna/ explanation)-->0.5- 0.7
+creative writing, story telling, jokes---->0.9-1.2
+Max randomness(wild ideas, brainstorminh)--> 1.5+.
+
+
+2. Claude LLM access using API key.---> Anthropic
+3. Gemini LLM access using API key.--> Google
+
+These were closed source models.
+Limitation---> cost
+          ---> no control for customisation.
+          ---> no data privacy.
+
+________________________________________________________________________
+
+Open Source Models:
+
+Example:
+
+LLama---> facebook---> best open source model for text generation.
+etc 
+Where to find them
+
+Huggingface---> largest repository of open source LLMs.
+
+Multimodal---> various input types---> image, video, audio, text---> various output types---> text, image, video, audio.
+Computer vision---> image classification, object detection, image generation, etc.
+NLP---> text classification, text generation, text summarization, etc.
+
+Ways to use
+Open source models--->Huggingface inference API.--> free tier available
+                  ---> Running on local machine.---> req memory and GPUs.
+
+
+Embedding  Models:
+
+          -------------------------> OpenAI
+          -------------------------> Huggingface
+
+          
+
+
+
+
+
+
+
+
+
+
+                 
+
