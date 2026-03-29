@@ -1,0 +1,60 @@
+Generally we provide input to LLM in text natural language and get the output same in the natural language text,
+Now, this process is fine but for integration the output should be in structured format.
+
+Here, the natural language text is in unstructured format and so integration would be difficult.
+
+So, langchain provide structured output.
+
+-----------------------------------------------------
+
+The common use cases for structured output are:
+1. Data extraction
+2. API building
+3. Agents
+
+Integration / communication with other system has become easy for example communicating with databases, apis etc.
+
+General theme is that LLM can provide structured as well as unstructurted output.
+And for unstructured output langchain provide output parsers with help of which we can get some structured output.
+
+1. With structured output:
+
+data format
+---> Typed dictionary----> typeddict, annotated typeddict--> (we can specify the description of the keys).
+---> Pydantic
+---> JSON Schema
+
+--------------------------------------------------
+
+1. Typed Dictionary:
+
+we make a class and define the attributes and their types.
+
+Example:
+
+class Person:
+    name: str
+    age: int
+    city: str
+
+2 key points:
+1. What keys are defined and what are their types.
+2. No validation, at runtime we assign age as string so it will run smoothly no issue.
+-----------------------------------------------------------------------------------
+
+When we run with_structured_output what happens behind the scene is that a system prompt is generated
+which tells LLM what is the required output format for example here, JSON.
+
+-----------------------------------------------------------------------------------
+
+There is no data validation in typeddictionary for this we can use pydantic.
+
+Pydantic is a library for data validation and data parsing for python.It ensures that the data is in the correct format, type-safe, and structured.
+
+Coerce ----> converting the data from one type to another type.
+
+Example: int(str(123))
+
+
+
+

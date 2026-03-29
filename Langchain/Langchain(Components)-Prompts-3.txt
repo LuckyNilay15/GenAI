@@ -1,0 +1,112 @@
+Plan of action:
+
+1.What are prompts?
+2.How prompts work in langchain?
+3.Classes for prompts in langchain and how to use them?
+
+Prompts are input instruction or queries given to a model to guide its output.
+
+Prompts---> text based prompts
+        ---> multi modal prompts---> image, video, audio, text etc.
+
+Static vs Dynamic prompts:
+
+Static---> fixed prompt, no change in prompt.
+Dynamic---> prompt changes based on the input.
+
+Static Prompt:
+
+Now with the static prompts all the control goes to user and if they write something wrong then it will give wrong output altogether.
+
+Now let suppose we are building a research tool so the output should be factual and consistent. So we need to provide a prompt which is factual and consistent. 
+and it give output which is research based.
+
+Now let suppose we are building a creative writing tool so the output should be creative and consistent. So we need to provide a prompt which is creative and consistent. 
+and it give output which is creative.
+
+So, for this consistency we need to have a template.
+
+Dynamic Prompt:
+
+Here we have a template and we fill the template with the user input selections.
+
+Example:
+we have 3 dropdowns:
+and user select the qustion, the style and the length
+and we pass down these to our template
+i.e. what, how and length
+so the output will be based on the dynamic input selections and this is known as dynamic prompt.
+
+
+#PromptTemplate:
+
+Why use prompt template over f string?
+
+1. Default validation.
+2. Reusable.
+3. Langchain ecosystem.
+
+-----------------------------------------------------------------
+
+In the example of chatbot we saw that maintaining the chat history was important so that ai have all the prev chat context.
+
+for this we maintained a list of messages and passed it to the llm.
+
+Now, let suppose we have a long conversation and we have a long list of messages.
+But llm can get confused what was user input and what was ai output.
+
+So we need to maintain a dictionary 
+{
+    "user": "Hi",
+    "AI": "Hello" and so
+}
+this was identified by langchain and they created a component for it.
+
+Types of messages in langchain:
+1. System message--> initial context provided(you are knowledgable doctor, AI research assistant).
+2. Human message
+3. AI message
+
+------------------------------------------------------------
+
+                            Model(invoke)
+
+                            -------> single message
+single turn stand alone queries
+static message
+dynamic message(prompt template)
+
+
+                            -------> list of messages
+multi turn conversation
+static message
+(System Message + Human Message + AI Message)
+dynamic message---> chatprompt template
+
+---------------------------------------------------------------
+
+Chat Prompt Template: dynamic messsages
+
+SystemMessage: you are a helpful {domain} expert.
+
+HumanMessage: explain about {topic}.
+
+PromptTemplate and ChatPromptTemplate in LangChain are tools for creating dynamic prompts.
+PromptTemplate handles plain text, ideal for simple, single-turn tasks. ChatPromptTemplate 
+structures multi-turn conversations using roles like "System," "Human," and "AI," allowing 
+structured, context-aware interactions necessary for chatbots.
+
+----------------------------------------------------------------
+
+Message Placeholder:
+
+A messageplaceholder is a special placeholder used inside a chatpromptTemplate to dynamically insert messages or a list of messages at runtime.
+
+
+
+
+
+
+
+
+

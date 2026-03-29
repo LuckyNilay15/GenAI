@@ -1,0 +1,9 @@
+Temperature--> 0-2 
+0-> very similar output every time for same input.
+2-> very different output + creative output every time for same input.
+
+
+0.1-0.3--> deterministic, factual, consistent, predictable.
+0.5-0.7--> balanced, general QnA, explanation.
+0.9-1.2--> creative, story telling, jokes.
+1.5+--> maximum randomness, wild ideas, brainstorming.
