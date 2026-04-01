@@ -1,0 +1,67 @@
+LLM. (structured output)
+
+-------> can(fine tuned to give if asked)---> using the function->with_structured_output()
+-------> can't ---> output parsers.
+
+Output parsers---> convert raw LLM responses into structured output like json, pydantic models and more.
+They ensure consistency, validation and ease of use in applications.
+
+Types of output parsers:
+1. stroutputparser
+2. json output parser
+3. structured output parser
+4. pydantic output parser
+5. csv output parser
+6. list output parser
+etc etc
+
+1. stroutputparser:
+
+It is the most basic output parser. It is used to convert the raw LLM response into a string.
+
+Result---> content+(additional_kwargs)->metadata(token usage)
+so print(result.content)
+
+Here, no need to do result.content , it will automatically give the content in string format
+
+What are its other benefits?
+
+
+Lets do using example:
+
+topic---> LLM---> detailed response---> LLM---> 5 lines summary.
+
+Chain (langchain)--> we convert different steps into a pipeline using chain in langchain.
+
+---------------------------------------------
+
+2. Json output parser:
+
+
+
+parser=JsonOutputParser()
+
+template=PromptTemplate(
+    template='Give the name, age and city of a fictional person \n {format_instructions}',
+    input_variables=[],
+    partial_variables={'format_instructions':parser.get_format_instructions()}
+)
+
+Limitation:
+Can't enforce json schema.
+
+
+---------------------------------------------------------
+
+3. Structured output parser:
+
+It is an output parser in langchain that is used to extract structured JSON based on predefined field schemas.
+It then give response according to the schema i.e. ResponseSchema(name='name', description='name of the person', type='string') etc.
+
+Limitation:
+Can't do data validation.
+
+---------------------------------------------------------
+
+4. Pydantic output parser:
+

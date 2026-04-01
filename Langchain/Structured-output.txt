@@ -49,11 +49,33 @@ which tells LLM what is the required output format for example here, JSON.
 
 There is no data validation in typeddictionary for this we can use pydantic.
 
+Pydantic:
+
 Pydantic is a library for data validation and data parsing for python.It ensures that the data is in the correct format, type-safe, and structured.
 
 Coerce ----> converting the data from one type to another type.
 
 Example: int(str(123))
+1. Default values
+2. Optional fields
+3. Coerce
+4. Built-in validation
+5. field function-> default values, constraints, description, regex.
+6. expressions
+7. return pydantic object -> return json/dict
+
+
+--------------------------------------------------
+
+JSON-Schema:
+
+It can be used when the overall project is in different language.
+
+With_structured_output(method,):
+
+method param:- json mode->json, function calling--> func call(tool calling in case of agents).
+
+
 
 
 
