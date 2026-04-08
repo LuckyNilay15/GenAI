@@ -65,3 +65,17 @@ Can't do data validation.
 
 4. Pydantic output parser:
 
+It is a structured output parser that is used to extract structured JSON based on predefined pydantic models.
+
+Benefits:
+a. Strict Schema Enforcement
+b. Type Safety
+c. Easy validation
+d. Seamless Integration.
+
+1.stringoutparser---> string 
+2. json output parser---> json + no schema(structured output Not used)
+3. structured output parser---> json + schema(structured output used)+ but no validation.
+4. pydantic output parser---> pydantic model + schema(structured output used)+ validation.
+
+
